@@ -1,6 +1,6 @@
 FROM alpine:3.3
 
-RUN apt-get update && apt-get -y install nodejs && apt-get -y install npm
+RUN apt-get update && apt-get -y install nodejs npm
 RUN npm install -g strong-nginx-controller
 RUN sl-nginx-ctl-install
 
