@@ -1,9 +1,5 @@
 FROM alpine:3.3
 
-RUN apt-get update && apt-get -y install nodejs npm
-RUN npm install -g strong-nginx-controller
-RUN sl-nginx-ctl-install
-
 MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
 ENV NGINX_VERSION 1.8.1
