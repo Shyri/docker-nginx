@@ -2,7 +2,8 @@ FROM debian:jessie
 
 RUN apt-get update && apt-get -y install nodejs npm
 RUN npm install -g strong-nginx-controller
-RUN sl-nginx-ctl-install
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+# RUN sl-nginx-ctl-install
 
 MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
@@ -19,5 +20,3 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
 EXPOSE 80 443
-
-CMD ["nginx", "-g", "daemon off;"]
